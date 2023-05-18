@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		0527E7C323829BF2005B3936 /* TRETJapanNFCReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5D2D7122C5E977004330F3 /* TRETJapanNFCReader.framework */; };
 		0527E7C423829BF2005B3936 /* TRETJapanNFCReader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD5D2D7122C5E977004330F3 /* TRETJapanNFCReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0527E7CC2382BF17005B3936 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527E7CB2382BF17005B3936 /* RecordView.swift */; };
+		92280D9B2A1627B40013E9DF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 92280D9A2A1627B40013E9DF /* FirebaseCrashlytics */; };
+		92280D9D2A16305C0013E9DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92280D9C2A16305C0013E9DF /* GoogleService-Info.plist */; };
 		CD06199222CE3517000EB026 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDFC3B7722CE2B66000E88B4 /* InfoPlist.strings */; };
 		CD10CBC923B7999300281E33 /* JapanNFCReaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10CB7223B7999300281E33 /* JapanNFCReaderError.swift */; };
 		CD10CBCA23B7999300281E33 /* JapanNFCReaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10CB7223B7999300281E33 /* JapanNFCReaderError.swift */; };
@@ -515,6 +517,7 @@
 		0527E7C123829BAE005B3936 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0527E7C823829E17005B3936 /* SwiftUIDriversLicenseReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIDriversLicenseReader.entitlements; sourceTree = "<group>"; };
 		0527E7CB2382BF17005B3936 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		92280D9C2A16305C0013E9DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD02AC62231CE5F6008614B7 /* TRETJapanNFCReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TRETJapanNFCReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD06D89222C67CD1006B238B /* DriversLicenseReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DriversLicenseReader.entitlements; sourceTree = "<group>"; };
 		CD10CB7223B7999300281E33 /* JapanNFCReaderError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JapanNFCReaderError.swift; sourceTree = "<group>"; };
@@ -690,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD5D2D7D22C5ED8C004330F3 /* TRETJapanNFCReader.framework in Frameworks */,
+				92280D9B2A1627B40013E9DF /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,6 +1040,7 @@
 		CD5D2D4E22C5E2F7004330F3 /* DriversLicenseReader */ = {
 			isa = PBXGroup;
 			children = (
+				92280D9C2A16305C0013E9DF /* GoogleService-Info.plist */,
 				CD06D89222C67CD1006B238B /* DriversLicenseReader.entitlements */,
 				CD5D2D4F22C5E2F7004330F3 /* AppDelegate.swift */,
 				CD5D2D5122C5E2F7004330F3 /* SceneDelegate.swift */,
@@ -1231,6 +1236,9 @@
 				CD5D2D8122C5EFE8004330F3 /* PBXTargetDependency */,
 			);
 			name = DriversLicenseReader;
+			packageProductDependencies = (
+				92280D9A2A1627B40013E9DF /* FirebaseCrashlytics */,
+			);
 			productName = DriversLicenseReader;
 			productReference = CD5D2D4D22C5E2F7004330F3 /* DriversLicenseReader.app */;
 			productType = "com.apple.product-type.application";
@@ -1380,6 +1388,9 @@
 				"zh-HK",
 			);
 			mainGroup = CD5D2D3422C5DF36004330F3;
+			packageReferences = (
+				92280D992A1627B40013E9DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CD5D2D3F22C5DF36004330F3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1434,6 +1445,7 @@
 				CD5D2D5C22C5E2FA004330F3 /* LaunchScreen.storyboard in Resources */,
 				CD5D2D8522C5F3EB004330F3 /* InfoPlist.strings in Resources */,
 				CD5D2D5922C5E2FA004330F3 /* Assets.xcassets in Resources */,
+				92280D9D2A16305C0013E9DF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2328,8 +2340,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Examples/DriversLicenseReader/DriversLicenseReader.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TWATL5SE8;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DAB2NZFLN5;
 				INFOPLIST_FILE = Examples/DriversLicenseReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2337,8 +2351,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.tret.DriversLicenseReader;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.hwelectro.myhwe.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = mvn_organic_link_develop;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2349,8 +2365,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Examples/DriversLicenseReader/DriversLicenseReader.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TWATL5SE8;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DAB2NZFLN5;
 				INFOPLIST_FILE = Examples/DriversLicenseReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2358,8 +2376,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.tret.DriversLicenseReader;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.hwelectro.myhwe.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = mvn_organic_link_develop;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2712,6 +2732,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		92280D992A1627B40013E9DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		92280D9A2A1627B40013E9DF /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92280D992A1627B40013E9DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD5D2D3522C5DF36004330F3 /* Project object */;
 }
