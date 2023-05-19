@@ -376,52 +376,53 @@ public struct DriversLicenseCard {
         for field in fields {
             switch field.tag.first {
             case 0x11:
-                jisX0208EstablishmentYearNumber = field.value.first?.toString()
+                jisX0208EstablishmentYearNumber = "\(field.tag) + \(field.length) + \(field.value)" //field.value.first?.toString()
             case 0x12:
-                let nameData = field.value.split(count: 2)
-                name = String?(jisX0208Data: nameData)
+//                let nameData = field.value.split(count: 2)
+                name = "\(field.tag) + \(field.length) + \(field.value)" //String?(jisX0208Data: nameData)
             case 0x13:
-                let nicknameData = field.value.split(count: 2)
-                nickname = String?(jisX0208Data: nicknameData)
+//                let nicknameData = field.value.split(count: 2)
+                nickname = "\(field.tag) + \(field.length) + \(field.value)" //String?(jisX0208Data: nicknameData)
             case 0x14:
 //                let commonNameData = field.value.split(count: 2)
-                commonName = "commonName" //String?(jisX0208Data: commonNameData)
+                commonName = "\(field.tag) + \(field.length) + \(field.value)" //String?(jisX0208Data: commonNameData)
             case 0x15:
-                let uniformNameData = field.value.split(count: 2)
-                uniformName =  "uniformNameData" // String?.init(jisX0208Data: uniformNameData)
+//                let uniformNameData = field.value.split(count: 2)
+                uniformName = "\(field.tag) + \(field.length) + \(field.value)" //String?.init(jisX0208Data: uniformNameData)
+            case 0x17:
+//                let addressData = field.value.split(count: 2)
+                address = "\(field.tag) + \(field.length) + \(field.value)" //String?.init(jisX0208Data: addressData)
+            case 0x1A:
+//                let colorData = field.value.split(count: 2)
+                color = "\(field.tag) + \(field.length) + \(field.value)" //String?.init(jisX0208Data: colorData)
+            case 0x1C:
+//                let condition1Data = field.value.split(count: 2)
+                condition1 = "\(field.tag) + \(field.length) + \(field.value)" //String?.init(jisX0208Data: condition1Data)
+            case 0x1D:
+//                let condition2Data = field.value.split(count: 2)
+                condition2 = "\(field.tag) + \(field.length) + \(field.value)" //String?.init(jisX0208Data: condition2Data)
+            case 0x1E:
+//                let condition3Data = field.value.split(count: 2)
+                condition3 = "\(field.tag) + \(field.length) + \(field.value)" //String?.init(jisX0208Data: condition3Data)
+            case 0x1F:
+//                let condition4Data = field.value.split(count: 2)
+                condition4 = "\(field.tag) + \(field.length) + \(field.value)" //String?.init(jisX0208Data: condition4Data)
+            case 0x20:
+//                let issuingAuthorityData = field.value.split(count: 2)
+                issuingAuthority = "\(field.tag) + \(field.length) + \(field.value)" //String?.init(jisX0208Data: issuingAuthorityData)
+                
+                
                 // ok
             case 0x16:
                 birthdate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
-            case 0x17:
-                let addressData = field.value.split(count: 2)
-                address = "address" //String?.init(jisX0208Data: addressData)
+                // ok
+            case 0x1B:
+                expirationDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
                 // ok
             case 0x18:
                 issuanceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x19:
                 referenceNumber = String(data: Data(field.value), encoding: .shiftJIS)
-            case 0x1A:
-                let colorData = "colorData" //field.value.split(count: 2)
-                color = String?.init(jisX0208Data: colorData)
-                // ok
-            case 0x1B:
-                expirationDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
-            case 0x1C:
-                let condition1Data = field.value.split(count: 2)
-                condition1 = String?.init(jisX0208Data: condition1Data)
-            case 0x1D:
-                let condition2Data = field.value.split(count: 2)
-                condition2 = String?.init(jisX0208Data: condition2Data)
-            case 0x1E:
-                let condition3Data = field.value.split(count: 2)
-                condition3 = String?.init(jisX0208Data: condition3Data)
-            case 0x1F:
-                let condition4Data = field.value.split(count: 2)
-                condition4 = String?.init(jisX0208Data: condition4Data)
-            case 0x20:
-                let issuingAuthorityData = field.value.split(count: 2)
-                issuingAuthority = String?.init(jisX0208Data: issuingAuthorityData)
-                
                 // below this ok
             case 0x21:
                 number = String(data: Data(field.value), encoding: .shiftJIS)
