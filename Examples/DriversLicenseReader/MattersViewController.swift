@@ -20,6 +20,7 @@ class MattersViewController: UITableViewController, DriversLicenseReaderSessionD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reader = DriversLicenseReader(viewController: self)
+        title = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String? ?? "x.x"
     }
     
     override func viewDidAppear(_ animated: Bool) {

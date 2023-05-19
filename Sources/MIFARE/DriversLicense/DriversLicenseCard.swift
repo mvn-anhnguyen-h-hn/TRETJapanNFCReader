@@ -390,19 +390,19 @@ public struct DriversLicenseCard {
                 let uniformNameData = field.value.split(count: 2)
                 uniformName = String?.init(jisX0208Data: uniformNameData)
             case 0x16:
-                birthdate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                birthdate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x17:
                 let addressData = field.value.split(count: 2)
                 address = String?.init(jisX0208Data: addressData)
             case 0x18:
-                issuanceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                issuanceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x19:
-                referenceNumber = String(data: Data(field.value), encoding: .shiftJIS)
+                referenceNumber = "String(data: Data(field.value), encoding: .shiftJIS)"
             case 0x1A:
                 let colorData = field.value.split(count: 2)
                 color = String?.init(jisX0208Data: colorData)
             case 0x1B:
-                expirationDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                expirationDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x1C:
                 let condition1Data = field.value.split(count: 2)
                 condition1 = String?.init(jisX0208Data: condition1Data)
@@ -419,43 +419,43 @@ public struct DriversLicenseCard {
                 let issuingAuthorityData = field.value.split(count: 2)
                 issuingAuthority = String?.init(jisX0208Data: issuingAuthorityData)
             case 0x21:
-                number = String(data: Data(field.value), encoding: .shiftJIS)
+                number = "\(field.tag) + \(field.length) + \(field.value)" //String(data: Data(field.value), encoding: .shiftJIS)
             case 0x22:
-                motorcycleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                motorcycleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x23:
-                otherLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                otherLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x24:
-                class2LicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                class2LicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x25:
-                heavyVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                heavyVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x26:
-                ordinaryVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                ordinaryVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x27:
-                heavySpecialVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                heavySpecialVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x28:
-                heavyMotorcycleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                heavyMotorcycleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x29:
-                ordinaryMotorcycleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                ordinaryMotorcycleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x2A:
-                smallSpecialVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                smallSpecialVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x2B:
-                mopedLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                mopedLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x2C:
-                trailerLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                trailerLicenceDate = Date() // String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x2D:
-                class2HeavyVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                class2HeavyVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x2E:
-                class2OrdinaryVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                class2OrdinaryVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x2F:
-                class2HeavySpecialVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                class2HeavySpecialVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x30:
-                class2TrailerLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                class2TrailerLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x31:
-                mediumVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                mediumVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x32:
-                class2MediumVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                class2MediumVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x33:
-                semiMediumVehicleLicenceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                semiMediumVehicleLicenceDate = Date() //String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             default:
                 break
             }

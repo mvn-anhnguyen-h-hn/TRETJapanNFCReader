@@ -15,6 +15,7 @@ class DriversLicenseViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String? ?? "x.x"
     }
     
     // MARK: - Table view data source
