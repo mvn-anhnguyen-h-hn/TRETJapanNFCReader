@@ -389,20 +389,12 @@ public struct DriversLicenseCard {
             case 0x15:
                 let uniformNameData = field.value.split(count: 2)
                 uniformName = String?.init(jisX0208Data: uniformNameData)
-            case 0x16:
-                birthdate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x17:
                 let addressData = field.value.split(count: 2)
                 address = String?.init(jisX0208Data: addressData)
-            case 0x18:
-                issuanceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
-            case 0x19:
-                referenceNumber = String(data: Data(field.value), encoding: .shiftJIS)
             case 0x1A:
                 let colorData = field.value.split(count: 2)
                 color = String?.init(jisX0208Data: colorData)
-            case 0x1B:
-                expirationDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
             case 0x1C:
                 let condition1Data = field.value.split(count: 2)
                 condition1 = String?.init(jisX0208Data: condition1Data)
@@ -418,6 +410,20 @@ public struct DriversLicenseCard {
             case 0x20:
                 let issuingAuthorityData = field.value.split(count: 2)
                 issuingAuthority = String?.init(jisX0208Data: issuingAuthorityData)
+                
+                
+                // ok
+            case 0x16:
+                birthdate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                // ok
+            case 0x1B:
+                expirationDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+                // ok
+            case 0x18:
+                issuanceDate = String(data: Data(field.value), encoding: .shiftJIS).toDateFromJapanese()
+            case 0x19:
+                referenceNumber = String(data: Data(field.value), encoding: .shiftJIS)
+                // below this ok
             case 0x21:
                 number = String(data: Data(field.value), encoding: .shiftJIS)
             case 0x22:
