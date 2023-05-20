@@ -15,6 +15,7 @@ import TRETJapanNFCReader_MIFARE
 internal extension Optional where Wrapped == String {
     init(jisX0208Data: [[UInt8]]) {
         self = jisX0208Data.map { (data) -> String in
+            if data.count < 2 { return "" }
             let bytes = UInt16(data[1]) << 8 + UInt16(data[0])
             if bytes >= 0xFFF1 {
                 switch bytes {
