@@ -38,6 +38,9 @@ internal extension Optional where Wrapped == String {
                     return "(未定義)"
                 }
             } else {
+                if bytes > UInt16.max - 0x8080 {
+                    return ""
+                }
                 let data = (bytes + 0x8080).data
                 if let s = String(data: data, encoding: .japaneseEUC) {
                     return s
